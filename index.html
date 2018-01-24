@@ -22,14 +22,16 @@
       }(document, 'script', 'Messenger'));
     </script>
     <script>
-        MessengerExtensions.getContext('212485252825769', 
-        function success(thread_context){
-            $("#response").text(thread_context);
-        },
-        function error(err){
-            // error
-        }
-        );
+        window.extAsyncInit = function() {
+            MessengerExtensions.getContext('212485252825769', 
+            function success(thread_context){
+                $("#response").text(thread_context);
+            },
+            function error(err){
+                // error
+            }
+            );
+        };
     </script>
 </body>
 </html>
