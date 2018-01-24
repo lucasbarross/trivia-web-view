@@ -30,6 +30,7 @@
                 console.log($("#response").text())
             },
             function error(err){
+                $("#response").text(err);
                 console.log(err);
             }
             );
