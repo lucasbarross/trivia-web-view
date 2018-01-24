@@ -26,6 +26,8 @@
             MessengerExtensions.getContext('212485252825769', 
             function success(thread_context){
                 $("#response").text(thread_context);
+                console.log(thread_context);
+                console.log($("#response").text())
             },
             function error(err){
                 // error
