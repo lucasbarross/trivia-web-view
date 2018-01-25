@@ -6,7 +6,7 @@ body{
 
 
 #main{
-    /* display: none; */
+    display: none;
 }
 #try{
     display: none;
@@ -75,7 +75,5 @@ body{
     align-items: center;
     flex-direction: column;
     flex-wrap: nowrap;
-    height: 100%;
-    width: 100%;
 }
 

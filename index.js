@@ -3,13 +3,12 @@ $(document).ready(function(){
     var best = 0;
     var right = 0;
 
-    $("#feedback").text(window.location.search);
     var query = window.location.search.split("mode=");
     var mode = query.length == 2 ? query[1] : null;
     var url;
     
     $('.ui.modal').modal({closable: false});
-    $("#main").hide();
+    //$("#main").hide();
     
     function generateToken(){
         $.get("https://opentdb.com/api_token.php?command=request", function(data){
@@ -108,7 +107,7 @@ $(document).ready(function(){
         );
     }
 
-    $("#give_up").on('click', function(e){
+    $(".give_up").on('click', function(e){
         sendDataToBot();
     })
 
