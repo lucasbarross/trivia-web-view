@@ -58,7 +58,12 @@ $(document).ready(function(){
     function sendDataToBot(){
         MessengerExtensions.getContext('212485252825769', 
         function success(thread_context){
-            $.post(`https://api.chatfuel.com/bots/5a68b284e4b02eba797feb45/users/${thread_context.psid}/send?chatfuel_token=vnbqX6cpvXUXFcOKr5RHJ7psSpHDRzO1hXBY8dkvn50ZkZyWML3YdtoCnKH7FSjC&chatfuel_block_name=Quit&correct=${best}&date=${new Date(day, month, year)}`, function(data){
+            var date = new Date();
+            var dd = date.getDate();
+            var mm = date.getMonth()+1;
+            var yyyy = date.getFullYear();
+            var today = dd + "-" + mm + "-" + yyyy
+            $.post(`https://api.chatfuel.com/bots/5a68b284e4b02eba797feb45/users/${thread_context.psid}/send?chatfuel_token=vnbqX6cpvXUXFcOKr5RHJ7psSpHDRzO1hXBY8dkvn50ZkZyWML3YdtoCnKH7FSjC&chatfuel_block_name=Quit&correct=${best}&date=${today}`, function(data){
                 if(data.success){
                     MessengerExtensions.requestCloseBrowser(function success() {
                         console.log(data);
