@@ -15,6 +15,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.css" />
 </head>
 <body>
+    <script>
+            (function(d, s, id){
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) {return;}
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.com/en_US/messenger.Extensions.js";
+            fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'Messenger'));
+    </script>
     <div class="ui modal">
         <div class="header">
             Ooops! That's not correct, sir!
@@ -24,15 +33,6 @@
             <div id="give_up" class="ui red button">Nahh, I give up.</div>
         </div>
     </div>
-    <!-- <script>
-        (function(d, s, id){
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) {return;}
-        js = d.createElement(s); js.id = id;
-        js.src = "//connect.facebook.com/en_US/messenger.Extensions.js";
-        fjs.parentNode.insertBefore(js, fjs);
-      }(document, 'script', 'Messenger'));
-    </script> -->
     <div class="container">
         <div class="wrapper">
             <h4 id="question">What's up?!</h4>
