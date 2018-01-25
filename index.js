@@ -12,7 +12,7 @@ $(document).ready(function(){
     function generateToken(){
         $.get("https://opentdb.com/api_token.php?command=request", function(data){
             if (data.response_code == 0){
-                if(mode == null){
+                if(mode != null){
                     url = `https://opentdb.com/api.php?amount=1&difficulty=${mode}&type=multiple&token=${data.token}`;
                 } else {
                     url = `https://opentdb.com/api.php?amount=1&type=multiple&token=${data.token}`;
