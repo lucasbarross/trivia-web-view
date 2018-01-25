@@ -2,13 +2,31 @@ $(document).ready(function(){
     var question;
     var best = 0;
     var right = 0;
-
+    var query = window.location.search;
+    var mode = query != "" ? query.split("=")[1] : null;
+    var url;
+    
     $('.ui.modal').modal({closable: false});
     $("#main").hide();
     
+    function generateToken(){
+        $.get("https://opentdb.com/api_token.php?command=request", function(data){
+            if (data.response_code == 0){
+                if(mode == null){
+                    url = `https://opentdb.com/api.php?amount=1&difficulty=${mode}&type=multiple&token=${data.token}`;
+                } else {
+                    url = `https://opentdb.com/api.php?amount=1&type=multiple&token=${data.token}`;
+                }
+                getQuestion();
+            } else {
+                console.log(data);
+            }
+        })
+    }
+
     function getQuestion(){
         $("#main").hide();
-        $.get("https://opentdb.com/api.php?amount=1&type=multiple", function(data){
+        $.get(url, function(data){
             if(data.response_code == 0){
                 question = data.results[0];
                 setTrivia();
@@ -97,6 +115,6 @@ $(document).ready(function(){
 
     window.extAsyncInit = function() {
         $(".loading").show();
-        getQuestion();
+        generateToken();
     };
 })
