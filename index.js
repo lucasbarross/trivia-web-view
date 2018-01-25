@@ -3,6 +3,7 @@ $(document).ready(function(){
     var best = 0;
     var right = 0;
     var query = window.location.search;
+    console.log(query);
     var mode = query != "" ? query.split("=")[1] : null;
     var url;
     
