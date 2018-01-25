@@ -8,7 +8,7 @@ $(document).ready(function(){
     var url;
     
     $('.ui.modal').modal({closable: false});
-    //$("#main").hide();
+    $("#main").hide();
     
     function generateToken(){
         $.get("https://opentdb.com/api_token.php?command=request", function(data){
