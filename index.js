@@ -2,6 +2,8 @@ $(document).ready(function(){
     var question;
     var best = 0;
     var right = 0;
+    
+    $("#feedback").text(window.location.search);
     var query = window.location.search.split("&");
     var mode = query.length == 2 ? query[1].split("=")[1] : null;
     var url;
