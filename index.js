@@ -66,15 +66,15 @@ $(document).ready(function(){
                     MessengerExtensions.requestCloseBrowser(function success() {
                         console.log(data);
                       }, function error(err) {
-                        console.log("Some error has ocurred");
+                        console.log("Some error closing has ocurred");
                     });
                 } else {
-                    console.log("Some error has ocurred");
+                    console.log("Some error posting to chatfuel has ocurred");
                 }
             })
         },
         function error(err){
-            console.log("Some error has ocurred");
+            console.log("Some error getting context has ocurred");
         }
         );
     }
