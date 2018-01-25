@@ -4,7 +4,8 @@ $(document).ready(function(){
     var right = 0;
 
     $('.ui.modal').modal({closable: false});
-
+    $("#main").hide();
+    
     function getQuestion(){
         $("#main").hide();
         $.get("https://opentdb.com/api.php?amount=1&type=multiple", function(data){
