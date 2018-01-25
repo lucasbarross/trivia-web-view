@@ -4,6 +4,10 @@ body{
     padding-top: 100px;
 }
 
+
+#main{
+    display: none;
+}
 #try{
     display: none;
 }
@@ -11,7 +15,11 @@ body{
 .header{
     text-align: center;
 }
-
+.loading{
+    font-size: 150px;
+    text-align: center;
+    margin-top: 100px;
+}
 .actions{
     display: flex;
     justify-content: center;

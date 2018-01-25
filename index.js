@@ -6,6 +6,8 @@ $(document).ready(function(){
     $('.ui.modal').modal({closable: false});
 
     function getQuestion(){
+        $("#main").hide();
+        $(".loading").show();
         $.get("https://opentdb.com/api.php?amount=1&type=multiple", function(data){
             if(data.response_code == 0){
                 question = data.results[0];
@@ -35,6 +37,8 @@ $(document).ready(function(){
             buttons.splice(brand, 1);
             answers.splice(arand, 1);    
         }
+        $(".loading").hide();
+        $("#main").show();
     }
 
     $(".answer").on('click', function(e){

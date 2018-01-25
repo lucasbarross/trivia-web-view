@@ -13,6 +13,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.js"></script>
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.css" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 </head>
 <body>
     <script>
@@ -33,16 +34,18 @@
             <div id="give_up" class="ui red button">Nahh, I give up.</div>
         </div>
     </div>
-    <div class="container">
+    
+    <div class="loading"><i class="fa fa-spinner fa-spin" aria-hidden="true"></i></div>
+    <div id="main" class="container">
         <div class="wrapper">
-            <h4 id="question">What's up?!</h4>
+            <h4 id="question"></h4>
             <div class="wrapper small">
-                <h6 id="category">Category: History</h6>
+                <h6 id="category"></h6>
                 <div class="ui vertical buttons">
-                    <button id="answer1" class="answer ui red button">Aloha</button>
-                    <button id="answer2" class="answer ui green button">Aloha</button>
-                    <button id="answer3" class="answer ui blue  button">Aloha</button>
-                    <button id="answer4" class="answer ui yellow button">Aloha</button>
+                    <button id="answer1" class="answer ui red button"></button>
+                    <button id="answer2" class="answer ui green button"></button>
+                    <button id="answer3" class="answer ui blue  button"></button>
+                    <button id="answer4" class="answer ui yellow button"></button>
                 </div>
             </div>
         </div>
