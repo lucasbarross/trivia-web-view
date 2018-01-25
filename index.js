@@ -7,7 +7,6 @@ $(document).ready(function(){
 
     function getQuestion(){
         $("#main").hide();
-        $(".loading").show();
         $.get("https://opentdb.com/api.php?amount=1&type=multiple", function(data){
             if(data.response_code == 0){
                 question = data.results[0];
@@ -38,11 +37,13 @@ $(document).ready(function(){
             answers.splice(arand, 1);    
         }
         $(".loading").hide();
+        $(".correct").hide();
         $("#main").show();
     }
 
     $(".answer").on('click', function(e){
         if($(this).html() == decode(question.correct_answer)){
+            $(".correct").show();
             getQuestion();
             right++;
         } else{
@@ -94,6 +95,7 @@ $(document).ready(function(){
     })
 
     window.extAsyncInit = function() {
+        $(".loading").show();
         getQuestion();
     };
 })

@@ -6,7 +6,7 @@ body{
 
 
 #main{
-    display: none;
+    /* display: none; */
 }
 #try{
     display: none;
@@ -20,6 +20,15 @@ body{
     text-align: center;
     margin-top: 100px;
 }
+
+.correct{
+    display: none;
+    color: green;
+    font-size: 150px;
+    text-align: center;
+    margin-top: 100px;
+}
+
 .actions{
     display: flex;
     justify-content: center;
