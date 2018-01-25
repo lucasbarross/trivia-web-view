@@ -76,6 +76,7 @@ $(document).ready(function(){
     })
 
     $("#retry").on('click', function(e){
+        $(".loading").show();
         getQuestion();
         $('.ui.modal').modal('hide');
     })
