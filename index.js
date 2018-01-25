@@ -42,26 +42,23 @@ $(document).ready(function(){
             getQuestion();
             right++;
         } else{
+            if(right > best){
+                best = right;
+            }
+            right = 0;
             $('.ui.modal').modal('show');
         }
     })
 
     $("#retry").on('click', function(e){
         getQuestion();
-        
-        if(right > best){
-            best = right;
-        }
-
-        right = 0;
-        
         $('.ui.modal').modal('hide');
     })
     
     function sendDataToBot(){
         MessengerExtensions.getContext('212485252825769', 
         function success(thread_context){
-            $.post(`https://api.chatfuel.com/bots/5a68b284e4b02eba797feb45/users/${thread_context.psid}/send?chatfuel_token=vnbqX6cpvXUXFcOKr5RHJ7psSpHDRzO1hXBY8dkvn50ZkZyWML3YdtoCnKH7FSjC&chatfuel_block_name=Quit&correct=${best}`, function(data){
+            $.post(`https://api.chatfuel.com/bots/5a68b284e4b02eba797feb45/users/${thread_context.psid}/send?chatfuel_token=vnbqX6cpvXUXFcOKr5RHJ7psSpHDRzO1hXBY8dkvn50ZkZyWML3YdtoCnKH7FSjC&chatfuel_block_name=Quit&correct=${best}&date=${new Date(day, month, year)}`, function(data){
                 if(data.success){
                     MessengerExtensions.requestCloseBrowser(function success() {
                         console.log(data);
