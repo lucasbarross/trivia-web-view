@@ -79,9 +79,9 @@ $(document).ready(function(){
         );
     }
 
-    $("#give_up").on('click'), function(e){
+    $("#give_up").on('click', function(e){
         sendDataToBot();
-    }
+    })
 
     $(window).on('beforeunload', function(){
         sendDataToBot();
