@@ -2,9 +2,10 @@ $(document).ready(function(){
     var question;
     var best = 0;
     var right = 0;
-    var query = window.location.search;
+    var query = window.location.search.split("&");
+    var mode = query.length == 2 ? query[1].split("=")[1] : null;
     console.log(query);
-    var mode = query != "" ? query.split("=")[1] : null;
+    console.log(mode);
     var url;
     
     $('.ui.modal').modal({closable: false});
